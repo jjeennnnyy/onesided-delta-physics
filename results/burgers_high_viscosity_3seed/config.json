@@ -1,0 +1,41 @@
+{
+  "out": "results/burgers_high_viscosity_3seed",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "grid": 64,
+  "train_steps": 20,
+  "eval_steps": 50,
+  "step_dt": 0.02,
+  "solver_dt": 0.002,
+  "n_train": 24,
+  "n_val": 6,
+  "n_test": 8,
+  "epochs": 15,
+  "batch_size": 32,
+  "width": 32,
+  "modes": 16,
+  "depth": 4,
+  "reference_viscosity": 0.01,
+  "viscosity_ratios": [
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "methods": [
+    "increment",
+    "delta_physics"
+  ],
+  "horizons": [
+    1,
+    5,
+    10,
+    20,
+    50
+  ],
+  "device": "cpu"
+}

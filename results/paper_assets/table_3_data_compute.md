@@ -1,0 +1,6 @@
+| Method | Target-parameter training data? | Training viscosities | Training trajectories | Training pairs | Optimizer time / seed (s) | Parameters | NN evals / step | Inference time (s) |
+|---|---|---|---|---|---|---|---|---|
+| Increment | No | 1 | 24 | 480 | 280.19 +/- 2.92 | 28,370 | 1.00 | 7.53 +/- 0.83 |
+| One-sided Delta-Physics | No | 1 | 24 | 480 | 280.19 +/- 2.92 | 28,370 | 1.00 | 8.06 +/- 1.40 |
+| Equation-Recast-style | No | 1 | 24 | 480 | 280.19 +/- 2.92 | 28,370 | 8.81 | 70.08 +/- 8.50 |
+| Conditioned F-FNO | Yes | 5 | 120 | 2400 | 1275.70 +/- 86.78 | 28,386 | 1.00 | 7.38 +/- 0.32 |

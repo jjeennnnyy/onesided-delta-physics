@@ -1,0 +1,33 @@
+{
+  "out": "results/ffno_ns64_equation_recast_3seed",
+  "checkpoint_dir": "results/ffno_ns64_high_viscosity_3seed",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "grid": 64,
+  "eval_steps": 50,
+  "step_dt": 0.05,
+  "solver_dt": 0.005,
+  "n_test": 8,
+  "width": 16,
+  "modes": 8,
+  "depth": 8,
+  "factor": 4,
+  "reference_viscosity": 0.001,
+  "viscosity_ratios": [
+    1.0,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "tolerance": 1e-05,
+  "max_iterations": 30,
+  "device": "cpu",
+  "methods": [
+    "increment",
+    "delta_physics",
+    "equation_recast"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "out": "results/ffno_ns64_high_viscosity_3seed",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "grid": 64,
+  "train_steps": 20,
+  "eval_steps": 50,
+  "step_dt": 0.05,
+  "solver_dt": 0.005,
+  "n_train": 24,
+  "n_val": 6,
+  "n_test": 8,
+  "epochs": 15,
+  "batch_size": 32,
+  "width": 16,
+  "modes": 8,
+  "depth": 8,
+  "factor": 4,
+  "reference_viscosity": 0.001,
+  "viscosity_ratios": [
+    1.0,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "methods": [
+    "increment",
+    "delta_physics"
+  ],
+  "horizons": [
+    1,
+    5,
+    10,
+    20,
+    50
+  ],
+  "device": "cpu"
+}

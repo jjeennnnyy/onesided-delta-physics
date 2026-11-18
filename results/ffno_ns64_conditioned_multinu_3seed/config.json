@@ -1,0 +1,42 @@
+{
+  "out": "results/ffno_ns64_conditioned_multinu_3seed",
+  "reference_dir": "results/ffno_ns64_high_viscosity_3seed",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "grid": 64,
+  "train_steps": 20,
+  "eval_steps": 50,
+  "step_dt": 0.05,
+  "solver_dt": 0.005,
+  "n_train_per_viscosity": 24,
+  "n_val_per_viscosity": 6,
+  "n_test": 8,
+  "epochs": 15,
+  "batch_size": 32,
+  "width": 16,
+  "modes": 8,
+  "depth": 8,
+  "factor": 4,
+  "reference_viscosity": 0.001,
+  "train_ratios": [
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "test_ratios": [
+    1.0,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "device": "cpu",
+  "methods": [
+    "single_nu_delta_physics",
+    "multi_nu_conditioned"
+  ]
+}

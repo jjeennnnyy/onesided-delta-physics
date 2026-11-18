@@ -1,0 +1,40 @@
+{
+  "out": "results/ffno_dense_viscosity_scan",
+  "checkpoint": "results/ffno_physics_split_screen/increment.pt",
+  "seed": 0,
+  "grid": 24,
+  "normalizer_steps": 20,
+  "steps": 50,
+  "step_dt": 0.05,
+  "solver_dt": 0.005,
+  "n_reference_train": 24,
+  "n_test": 8,
+  "width": 16,
+  "modes": 8,
+  "depth": 8,
+  "factor": 4,
+  "reference_viscosity": 0.001,
+  "viscosity_ratios": [
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "methods": [
+    "increment",
+    "delta_physics"
+  ],
+  "horizons": [
+    1,
+    5,
+    10,
+    20,
+    50
+  ],
+  "device": "cpu"
+}

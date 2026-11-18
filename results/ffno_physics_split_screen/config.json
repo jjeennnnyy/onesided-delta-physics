@@ -1,0 +1,29 @@
+{
+  "out": "results/ffno_physics_split_screen",
+  "seed": 0,
+  "grid": 24,
+  "steps": 20,
+  "step_dt": 0.05,
+  "solver_dt": 0.005,
+  "n_train": 24,
+  "n_val": 6,
+  "n_test": 8,
+  "epochs": 15,
+  "batch_size": 32,
+  "width": 16,
+  "modes": 8,
+  "depth": 8,
+  "factor": 4,
+  "train_viscosity": 0.001,
+  "ood_viscosities": [
+    0.0005,
+    0.00075,
+    0.002
+  ],
+  "methods": [
+    "plain",
+    "increment",
+    "physics_split"
+  ],
+  "device": "cpu"
+}

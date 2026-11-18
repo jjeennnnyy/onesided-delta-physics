@@ -1,0 +1,21 @@
+{
+  "normalizers": {
+    "input_mean": {
+      "exact_equal": false,
+      "max_abs_difference": 2.832772905136949e-10
+    },
+    "input_std": {
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "increment_mean": {
+      "exact_equal": false,
+      "max_abs_difference": 1.5643309564383756e-11
+    },
+    "increment_std": {
+      "exact_equal": true,
+      "max_abs_difference": 0.0
+    }
+  },
+  "reference_metrics_exact_equal": true
+}

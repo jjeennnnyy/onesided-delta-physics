@@ -1,0 +1,54 @@
+\begin{table*}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\textit{(a) Horizon-specific relative errors}\par\smallskip
+\begin{tabular}{@{}rlcccc@{}}
+\toprule
+$\nu/\nu_0$ & Method & Step 1 RelL2 & Step 10 RelL2 & Step 20 RelL2 & Step 50 RelL2 \\
+\midrule
+1.0 & Increment & $0.00898\pm0.00120$ & $0.07923\pm0.01009$ & $0.14993\pm0.01717$ & $0.40913\pm0.06111$ \\
+1.0 & $\Delta$-Physics & $0.00898\pm0.00120$ & $0.07923\pm0.01009$ & $0.14993\pm0.01717$ & $0.40913\pm0.06111$ \\
+1.0 & Recast-style & $0.00898\pm0.00120$ & $0.07923\pm0.01009$ & $0.14993\pm0.01717$ & $0.40913\pm0.06111$ \\
+1.0 & Cond. F-FNO & $0.00226\pm0.00029$ & $0.01804\pm0.00240$ & $0.03051\pm0.00410$ & $0.06163\pm0.00547$ \\
+1.5 & Increment & $0.00911\pm0.00111$ & $0.08115\pm0.00937$ & $0.15581\pm0.01667$ & $0.43308\pm0.06382$ \\
+1.5 & $\Delta$-Physics & $0.00890\pm0.00118$ & $0.07579\pm0.00900$ & $0.14157\pm0.01511$ & $0.37956\pm0.06122$ \\
+1.5 & Recast-style & $0.00892\pm0.00117$ & $0.07578\pm0.00895$ & $0.14148\pm0.01503$ & $0.37802\pm0.06129$ \\
+1.5 & Cond. F-FNO & $0.00205\pm0.00024$ & $0.01477\pm0.00157$ & $0.02357\pm0.00234$ & $0.04922\pm0.00592$ \\
+1.75 & Increment & $0.00966\pm0.00113$ & $0.08564\pm0.00956$ & $0.16382\pm0.01722$ & $0.45106\pm0.06568$ \\
+1.75 & $\Delta$-Physics & $0.00887\pm0.00117$ & $0.07446\pm0.00856$ & $0.13895\pm0.01451$ & $0.37283\pm0.06213$ \\
+1.75 & Recast-style & $0.00889\pm0.00116$ & $0.07444\pm0.00848$ & $0.13883\pm0.01443$ & $0.37093\pm0.06211$ \\
+1.75 & Cond. F-FNO & $0.00209\pm0.00020$ & $0.01454\pm0.00119$ & $0.02268\pm0.00157$ & $0.04798\pm0.00383$ \\
+2.0 & Increment & $0.01047\pm0.00119$ & $0.09182\pm0.01005$ & $0.17414\pm0.01820$ & $0.47211\pm0.06797$ \\
+2.0 & $\Delta$-Physics & $0.00884\pm0.00116$ & $0.07332\pm0.00818$ & $0.13697\pm0.01411$ & $0.36816\pm0.06317$ \\
+2.0 & Recast-style & $0.00887\pm0.00115$ & $0.07329\pm0.00809$ & $0.13679\pm0.01404$ & $0.36589\pm0.06302$ \\
+2.0 & Cond. F-FNO & $0.00223\pm0.00017$ & $0.01523\pm0.00092$ & $0.02341\pm0.00093$ & $0.04941\pm0.00109$ \\
+\bottomrule
+\end{tabular}\par\medskip
+\textit{(b) Average rollout and spectral errors}\par\smallskip
+\begin{tabular}{@{}rlccc@{}}
+\toprule
+$\nu/\nu_0$ & Method & Avg-50 RelL2 & Avg-50 PSRE & Final PSRE \\
+\midrule
+1.0 & Increment & $0.19647\pm0.02527$ & $0.04083\pm0.01086$ & $0.07224\pm0.01139$ \\
+1.0 & $\Delta$-Physics & $0.19647\pm0.02527$ & $0.04083\pm0.01086$ & $0.07224\pm0.01139$ \\
+1.0 & Recast-style & $0.19647\pm0.02527$ & $0.04083\pm0.01086$ & $0.07224\pm0.01139$ \\
+1.0 & Cond. F-FNO & $0.03504\pm0.00394$ & $0.01019\pm0.00372$ & $0.02129\pm0.00744$ \\
+1.5 & Increment & $0.20605\pm0.02567$ & $0.06463\pm0.02655$ & $0.13174\pm0.04764$ \\
+1.5 & $\Delta$-Physics & $0.18445\pm0.02419$ & $0.03872\pm0.00822$ & $0.06802\pm0.00626$ \\
+1.5 & Recast-style & $0.18408\pm0.02420$ & $0.03849\pm0.00800$ & $0.06749\pm0.00605$ \\
+1.5 & Cond. F-FNO & $0.02733\pm0.00287$ & $0.00793\pm0.00242$ & $0.01652\pm0.00624$ \\
+1.75 & Increment & $0.21566\pm0.02640$ & $0.09274\pm0.02886$ & $0.19137\pm0.05505$ \\
+1.75 & $\Delta$-Physics & $0.18135\pm0.02412$ & $0.03804\pm0.00722$ & $0.06674\pm0.00454$ \\
+1.75 & Recast-style & $0.18089\pm0.02412$ & $0.03773\pm0.00693$ & $0.06603\pm0.00443$ \\
+1.75 & Cond. F-FNO & $0.02637\pm0.00189$ & $0.00699\pm0.00091$ & $0.01560\pm0.00420$ \\
+2.0 & Increment & $0.22754\pm0.02750$ & $0.12306\pm0.03099$ & $0.25576\pm0.06247$ \\
+2.0 & $\Delta$-Physics & $0.17915\pm0.02419$ & $0.03757\pm0.00636$ & $0.06598\pm0.00310$ \\
+2.0 & Recast-style & $0.17859\pm0.02418$ & $0.03720\pm0.00604$ & $0.06520\pm0.00309$ \\
+2.0 & Cond. F-FNO & $0.02716\pm0.00076$ & $0.00663\pm0.00034$ & $0.01505\pm0.00269$ \\
+\bottomrule
+\end{tabular}\par\medskip
+\caption{Absolute 64$\times$64 Navier--Stokes rollout errors (mean $\pm$ sample standard deviation over three seeds). Conditioned F-FNO uses five training viscosities; the remaining methods use only $\nu_0$ training data.}
+\label{tab:ns64_absolute}
+\end{table*}

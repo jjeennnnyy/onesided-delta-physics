@@ -1,0 +1,39 @@
+\begin{table*}[!t]
+\centering
+\normalsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.17}
+\begin{tabular}{@{}rlcccc@{}}
+\toprule
+$\nu/\nu_0$ & Method & \shortstack{Step-50\\RelL2} & \shortstack{Avg-50\\RelL2} & \shortstack{Avg-50\\PSRE} & Final PSRE \\
+\midrule
+\multicolumn{6}{l}{\textit{Single-$\nu$, zero-shot}} \\
+1.0 & Increment & $0.4091\pm0.0611$ & $0.1965\pm0.0253$ & $0.0408\pm0.0109$ & $0.0722\pm0.0114$ \\
+1.0 & $\Delta$-Physics & $0.4091\pm0.0611$ & $0.1965\pm0.0253$ & $0.0408\pm0.0109$ & $0.0722\pm0.0114$ \\
+1.0 & Recast-style & $0.4091\pm0.0611$ & $0.1965\pm0.0253$ & $0.0408\pm0.0109$ & $0.0722\pm0.0114$ \\
+\addlinespace[3pt]
+1.5 & Increment & $0.4331\pm0.0638$ & $0.2061\pm0.0257$ & $0.0646\pm0.0266$ & $0.1317\pm0.0476$ \\
+1.5 & $\Delta$-Physics & $0.3796\pm0.0612$ & $0.1845\pm0.0242$ & $0.0387\pm0.0082$ & $0.0680\pm0.0063$ \\
+1.5 & Recast-style & $0.3780\pm0.0613$ & $0.1841\pm0.0242$ & $0.0385\pm0.0080$ & $0.0675\pm0.0060$ \\
+\addlinespace[3pt]
+1.75 & Increment & $0.4511\pm0.0657$ & $0.2157\pm0.0264$ & $0.0927\pm0.0289$ & $0.1914\pm0.0551$ \\
+1.75 & $\Delta$-Physics & $0.3728\pm0.0621$ & $0.1814\pm0.0241$ & $0.0380\pm0.0072$ & $0.0667\pm0.0045$ \\
+1.75 & Recast-style & $0.3709\pm0.0621$ & $0.1809\pm0.0241$ & $0.0377\pm0.0069$ & $0.0660\pm0.0044$ \\
+\addlinespace[3pt]
+2.0 & Increment & $0.4721\pm0.0680$ & $0.2275\pm0.0275$ & $0.1231\pm0.0310$ & $0.2558\pm0.0625$ \\
+2.0 & $\Delta$-Physics & $0.3682\pm0.0632$ & $0.1792\pm0.0242$ & $0.0376\pm0.0064$ & $0.0660\pm0.0031$ \\
+2.0 & Recast-style & $0.3659\pm0.0630$ & $0.1786\pm0.0242$ & $0.0372\pm0.0060$ & $0.0652\pm0.0031$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Multi-$\nu$, supervised (target viscosities included)}} \\
+1.0 & Cond. F-FNO & $0.0616\pm0.0055$ & $0.0350\pm0.0039$ & $0.0102\pm0.0037$ & $0.0213\pm0.0074$ \\
+\addlinespace[3pt]
+1.5 & Cond. F-FNO & $0.0492\pm0.0059$ & $0.0273\pm0.0029$ & $0.0079\pm0.0024$ & $0.0165\pm0.0062$ \\
+\addlinespace[3pt]
+1.75 & Cond. F-FNO & $0.0480\pm0.0038$ & $0.0264\pm0.0019$ & $0.0070\pm0.0009$ & $0.0156\pm0.0042$ \\
+\addlinespace[3pt]
+2.0 & Cond. F-FNO & $0.0494\pm0.0011$ & $0.0272\pm0.0008$ & $0.0066\pm0.0003$ & $0.0150\pm0.0027$ \\
+\bottomrule
+\end{tabular}
+\caption{Main 64$\times$64 Navier--Stokes results (mean $\pm$ sample standard deviation over three seeds). Supervision regimes are shown explicitly: the zero-shot methods use only $\nu_0$, whereas Conditioned F-FNO uses five viscosities including all test values. Abbreviations: $\Delta$-Physics denotes One-sided $\Delta$-Physics; Recast-style denotes Equation-Recast-style; Cond. F-FNO denotes Conditioned F-FNO.}
+\label{tab:ns64_main}
+\end{table*}
