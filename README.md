@@ -34,7 +34,7 @@ Some shared modules retain historical model utilities because the frozen experim
 
 ## Environment and tests
 
-Python 3.10 or later; install `python -m pip install -r requirements.txt`.
+Python 3.10 or later; install `python -m pip install -r requirements.txt`. The tested versions are pinned separately in `requirements-tested.txt` (Python 3.10.11).
 Run `python -m pytest tests -q` from the repository root. CPU experiments used four Torch threads; timings are hardware dependent. See `environment.json` for the export environment, when available.
 
 ## Reproduce the experiments
@@ -71,6 +71,8 @@ pdflatex main.tex
 
 The original runners generate synthetic trajectories in memory rather than saving raw arrays. All original evaluation data (CSV/JSON), model weights and normalization statistics are included. `export_datasets.py` materializes trajectory arrays with the same solver parameters and RNG seeds; its outputs are regenerated data, not retrospectively claimed original cached files. The runners themselves remain the authoritative reproduction path.
 
+The exported [trajectory archive](data/trajectories) contains 55 compressed NPZ files covering NS64, Burgers and the supplementary NS24 scan. [Validation results](data/validation.json) confirm finite arrays and matching NS reference normalization statistics (standard deviations identical; means differ only at floating-point reduction precision). See [data documentation](data/README.md) for shapes, splits and provenance.
+
 The low-level `relative_diffusion_correction` function and the dense-scan helper deliberately implement a **two-sided** semigroup difference, enabling the supplementary ablation. For deployment of the final one-sided method, call this correction only when `nu > nu0`; otherwise return the Increment prediction directly. The formal main experiments test only `nu >= nu0`.
 
 NS: 64×64, seeds 0/1/2, reference viscosity 0.001, 24 training and 6 validation trajectories per seed, 20 training transitions, 8 test trajectories per viscosity, 50-step autoregressive evaluation. Single-viscosity training uses 480 pairs and 15 epochs. Test viscosity ratios: 1, 1.5, 1.75, 2.
@@ -80,5 +82,14 @@ The conditioned baseline uses five training viscosities (ratios 1, 1.25, 1.5, 1.
 Burgers uses a 1D backbone, reference viscosity 0.01 and 64 spatial points. See each result directory's `config.json` for solver time steps, architecture and all remaining settings. Error bars are sample standard deviations over three seeds. The dense two-sided scan is a separate single-seed, 24×24 diagnostic; it is not a three-seed NS64 result.
 
 The additional `ffno_ns64_budget75_seed0` experiment extends single-viscosity training to 75 epochs on the same data. It is a **single-seed sensitivity check, not part of the manuscript's main tables**. Its learning-rate schedule changes with the epoch budget. See its `analysis.md` and `analyze_ffno_training_budget.py`; do not interpret singleton aggregate standard deviations as three-seed evidence.
+
+To repeat that sensitivity check:
+
+```bash
+python run_ffno_high_viscosity_3seed.py --out results/ffno_ns64_budget75_seed0 --seeds 0 --grid 64 --epochs 75 --viscosity-ratios 1 1.5 1.75 2
+python analyze_ffno_training_budget.py
+```
+
+Check the downloaded snapshot with `python verify_artifacts.py`. The archived manuscript and original experimental outputs are preserved; the root README, dataset exporter and verification utility were added for publication packaging. The supplementary scan's reference checkpoint lives under the historical directory name `ffno_physics_split_screen`, but only its Increment weights and configuration are included.
 
 The repository contains the current working manuscript, not a claim of peer review or acceptance. No software license is assigned by this export; reuse permissions remain with the authors.

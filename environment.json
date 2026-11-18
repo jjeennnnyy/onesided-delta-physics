@@ -1,6 +1,7 @@
 {
   "platform": "Windows, CPU",
-  "python": "3.10",
+  "python": "3.10.11",
+  "pytest": "9.0.2",
   "torch": "2.7.0+cpu",
   "numpy": "1.26.4",
   "scipy": "1.15.3",

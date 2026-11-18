@@ -18,13 +18,21 @@ from fno_dual.data import generate_burgers_trajectories, generate_navier_stokes_
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--out', default='data/trajectories')
+    parser.add_argument('--shards', type=int, default=1)
+    parser.add_argument('--shard', type=int, default=0)
     args = parser.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     torch.set_num_threads(4)
     entries = []
+    job_index = 0
 
     def export(name, generator, count, grid, nu, steps, dt, solver_dt, seed, train_count=None):
+        nonlocal job_index
+        index = job_index
+        job_index += 1
+        if index % args.shards != args.shard:
+            return
         path = out / (name + '.npz')
         if not path.exists():
             values = generator(count, grid, nu, steps, dt, solver_dt, seed, 'cpu').numpy()
@@ -36,7 +44,8 @@ def main():
                             viscosity=nu, steps=steps, step_dt=dt, solver_dt=solver_dt,
                             rng_seed=seed, train_count=train_count,
                             sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
-        (out / 'manifest.json').write_text(json.dumps(entries, indent=2), encoding='utf-8')
+        manifest = 'manifest.json' if args.shards == 1 else f'manifest_shard{args.shard}.json'
+        (out / manifest).write_text(json.dumps(entries, indent=2), encoding='utf-8')
         print(name, flush=True)
 
     ns = json.loads(Path('results/ffno_ns64_conditioned_multinu_3seed/config.json').read_text())

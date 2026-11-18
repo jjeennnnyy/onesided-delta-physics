@@ -1,7 +1,8 @@
-* text=auto
+* text=auto eol=lf
 *.py text eol=lf
 *.md text eol=lf
 *.tex text eol=lf
 *.pt binary
 *.pdf binary
 *.png binary
+*.npz binary

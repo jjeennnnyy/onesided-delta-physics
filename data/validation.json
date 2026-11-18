@@ -1,0 +1,25 @@
+{
+  "archives_checked": 55,
+  "all_finite": true,
+  "ns_reference_normalizer_absolute_differences": {
+    "0": {
+      "input_mean": 2.832772905136949e-10,
+      "input_std": 0.0,
+      "increment_mean": 1.5643309564383756e-11,
+      "increment_std": 0.0
+    },
+    "1": {
+      "input_mean": 6.490153969807011e-10,
+      "input_std": 0.0,
+      "increment_mean": 6.184563711847391e-12,
+      "increment_std": 0.0
+    },
+    "2": {
+      "input_mean": 5.869272290404126e-10,
+      "input_std": 0.0,
+      "increment_mean": 4.5232203399470094e-11,
+      "increment_std": 0.0
+    }
+  },
+  "note": "Small reduction-order roundoff is permitted; this is not a comparison to unavailable original cached trajectories."
+}

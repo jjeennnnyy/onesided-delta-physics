@@ -1,0 +1,7 @@
+# Versions installed in the Windows/Python 3.10.11 export environment.
+# CPU experiments used torch 2.7.0+cpu; torch==2.7.0 also accepts that local version.
+numpy==1.26.4
+scipy==1.15.3
+torch==2.7.0
+matplotlib==3.8.4
+pytest==9.0.2
